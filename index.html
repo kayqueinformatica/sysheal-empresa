@@ -246,7 +246,7 @@
         }
 
         /* =========================
-           SECTIONS
+           SECTION
         ========================= */
 
         section {
@@ -331,6 +331,50 @@
         }
 
         /* =========================
+           SELEÇÃO DE SERVIÇOS
+        ========================= */
+
+        .service-selection {
+            margin-top: 40px;
+        }
+
+        .service-selection-title {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .service-selection-note {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .service-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 7px;
+            background: #fff;
+            color: #111;
+            cursor: pointer;
+        }
+
+        .service-option input {
+            width: auto;
+            accent-color: #e50914;
+            cursor: pointer;
+        }
+
+        /* =========================
            DIAGNOSIS
         ========================= */
 
@@ -382,6 +426,22 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: #e50914;
+        }
+
+        .selected-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .selected-services span {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #ddd;
+            background: #111;
+            font-size: 13px;
         }
 
         /* =========================
@@ -617,6 +677,195 @@
         }
 
         /* =========================
+           ESTÉTICA
+        ========================= */
+
+        body {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        header {
+            background: rgba(5, 5, 5, 0.94);
+            border-bottom-color: #202020;
+        }
+
+        .brand-sys {
+            color: #fff;
+        }
+
+        nav a {
+            color: #bbb;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            background: #050505;
+            color: #fff;
+        }
+
+        .hero p {
+            color: #aaa;
+        }
+
+        .btn-secondary {
+            border-color: #333;
+            color: #fff;
+            background: #0c0c0c;
+        }
+
+        .btn-secondary:hover {
+            border-color: #666;
+            background: #0c0c0c;
+        }
+
+        .hero-logo-box {
+            border-color: #222;
+            background: linear-gradient(145deg, #101010, #080808);
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .services {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .section-description {
+            color: #666;
+        }
+
+        .service-card {
+            border-color: #e0e0e0;
+            background: #fff;
+            box-shadow: 0 8px 30px rgba(0,0,0,.04);
+        }
+
+        .service-card:hover {
+            border-color: #e50914;
+            box-shadow: 0 14px 35px rgba(0,0,0,.08);
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        .diagnosis {
+            background: #050505;
+            color: #fff;
+        }
+
+        .diagnosis .section-title {
+            color: #fff;
+        }
+
+        .diagnosis .section-description {
+            color: #aaa;
+        }
+
+        .diagnosis-box {
+            border-color: #292929;
+            background: #0d0d0d;
+            box-shadow: none;
+        }
+
+        .form-group label {
+            color: #ddd;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: #111;
+            border-color: #333;
+            color: #fff;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #777;
+        }
+
+        .process {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .process .section-title {
+            color: #111;
+        }
+
+        .process .section-description {
+            color: #666;
+        }
+
+        .process-item {
+            border-top-color: #ddd;
+        }
+
+        .process-item p {
+            color: #666;
+        }
+
+        .about {
+            background: #050505;
+            color: #fff;
+        }
+
+        .about .section-label {
+            color: #e50914;
+        }
+
+        .about-content h2 {
+            color: #fff;
+        }
+
+        .about-content p {
+            color: #aaa;
+        }
+
+        .about-list div {
+            color: #ddd;
+        }
+
+        .about-logo {
+            border-color: #292929;
+            background: #000;
+            box-shadow: none;
+        }
+
+        .faq {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .faq .section-title {
+            color: #111;
+        }
+
+        .faq .section-description {
+            color: #666;
+        }
+
+        .faq-item {
+            border-bottom-color: #ddd;
+        }
+
+        .faq-question {
+            color: #111;
+        }
+
+        .faq-answer p {
+            color: #666;
+        }
+
+        footer {
+            background: #050505;
+            border-top-color: #222;
+        }
+
+        /* =========================
            RESPONSIVE
         ========================= */
 
@@ -701,6 +950,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+
             .process-grid {
                 grid-template-columns: 1fr;
             }
@@ -736,11 +989,15 @@
     ========================== -->
 
     <header>
+
         <div class="header-container">
 
             <a href="#inicio" class="brand-lockup">
 
-                <img src="imagens/logo-sysheal.png" alt="Logo SysHeal">
+                <img
+                    src="imagens/logo-sysheal-crop1.png"
+                    alt="Logo SysHeal"
+                >
 
                 <span class="brand-name">
                     <span class="brand-sys">SYS</span><span class="brand-heal">HEAL</span>
@@ -749,14 +1006,34 @@
             </a>
 
             <nav>
-                <a href="#servicos">Serviços</a>
-                <a href="#processo">Processo</a>
-                <a href="#empresa">Empresa</a>
-                <a href="#faq">FAQ</a>
-                <a href="#diagnostico" class="nav-button">Diagnóstico</a>
+
+                <a href="#servicos">
+                    Serviços
+                </a>
+
+                <a href="#processo">
+                    Processo
+                </a>
+
+                <a href="#empresa">
+                    Empresa
+                </a>
+
+                <a href="#faq">
+                    FAQ
+                </a>
+
+                <a
+                    href="#diagnostico"
+                    class="nav-button"
+                >
+                    Diagnóstico
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
@@ -766,7 +1043,10 @@
 
     <main>
 
-        <section class="hero" id="inicio">
+        <section
+            class="hero"
+            id="inicio"
+        >
 
             <div class="hero-container">
 
@@ -790,11 +1070,17 @@
 
                     <div class="hero-buttons">
 
-                        <a href="#diagnostico" class="btn btn-primary">
+                        <a
+                            href="#diagnostico"
+                            class="btn btn-primary"
+                        >
                             Solicitar diagnóstico
                         </a>
 
-                        <a href="#servicos" class="btn btn-secondary">
+                        <a
+                            href="#servicos"
+                            class="btn btn-secondary"
+                        >
                             Ver serviços
                         </a>
 
@@ -807,7 +1093,10 @@
 
                     <div class="hero-logo-box">
 
-                        <img src="imagens/logo-sysheal.png" alt="Logo SysHeal">
+                        <img
+                            src="imagens/logo-sysheal.png"
+                            alt="Logo SysHeal"
+                        >
 
                     </div>
 
@@ -822,7 +1111,10 @@
              SERVIÇOS
         ========================== -->
 
-        <section class="services" id="servicos">
+        <section
+            class="services"
+            id="servicos"
+        >
 
             <div class="section-container">
 
@@ -920,6 +1212,124 @@
 
                 </div>
 
+
+                <!--
+                    Os checkboxes ficam visualmente nesta seção,
+                    mas pertencem ao formulário através do atributo
+                    form="diagnosisForm".
+                -->
+
+                <div class="service-selection">
+
+                    <div class="service-selection-title">
+                        O que você precisa?
+                    </div>
+
+                    <div class="service-selection-note">
+                        Selecione uma ou mais opções:
+                    </div>
+
+                    <div class="service-options">
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Análise de código"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Análise de código
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Correção de erros"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Correção de erros
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Testes"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Testes
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Segurança"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Segurança
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Desempenho"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Desempenho
+                            </span>
+
+                        </label>
+
+
+                        <label class="service-option">
+
+                            <input
+                                type="checkbox"
+                                name="servicos"
+                                value="Estabilidade"
+                                form="diagnosisForm"
+                            >
+
+                            <span>
+                                Estabilidade
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -929,7 +1339,10 @@
              DIAGNÓSTICO
         ========================== -->
 
-        <section class="diagnosis" id="diagnostico">
+        <section
+            class="diagnosis"
+            id="diagnostico"
+        >
 
             <div class="section-container">
 
@@ -950,9 +1363,32 @@
                 <div class="diagnosis-box">
 
                     <form
+                        id="diagnosisForm"
                         class="diagnosis-form"
-                        onsubmit="enviarFormulario(event)"
+                        action="https://formsubmit.co/kayqueinformatica88@gmail.com"
+                        method="POST"
                     >
+
+                        <!-- CONFIGURAÇÕES DO FORMSUBMIT -->
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Nova solicitação de diagnóstico - SysHeal"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_captcha"
+                            value="false"
+                        >
+
 
                         <div class="form-group">
 
@@ -963,6 +1399,7 @@
                             <input
                                 type="text"
                                 id="nome"
+                                name="nome"
                                 placeholder="Seu nome"
                                 required
                             >
@@ -979,9 +1416,30 @@
                             <input
                                 type="url"
                                 id="site"
+                                name="site"
                                 placeholder="https://seusite.com.br"
                                 required
                             >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Serviços selecionados
+                            </label>
+
+                            <div
+                                id="servicos-selecionados"
+                                class="selected-services"
+                            >
+
+                                <span>
+                                    Nenhum serviço selecionado
+                                </span>
+
+                            </div>
 
                         </div>
 
@@ -994,6 +1452,7 @@
 
                             <textarea
                                 id="problema"
+                                name="problema"
                                 placeholder="Explique brevemente o que está acontecendo..."
                                 required
                             ></textarea>
@@ -1021,7 +1480,10 @@
              PROCESSO
         ========================== -->
 
-        <section class="process" id="processo">
+        <section
+            class="process"
+            id="processo"
+        >
 
             <div class="section-container">
 
@@ -1122,7 +1584,10 @@
              EMPRESA
         ========================== -->
 
-        <section class="about" id="empresa">
+        <section
+            class="about"
+            id="empresa"
+        >
 
             <div class="section-container">
 
@@ -1206,7 +1671,10 @@
              FAQ
         ========================== -->
 
-        <section class="faq" id="faq">
+        <section
+            class="faq"
+            id="faq"
+        >
 
             <div class="section-container">
 
@@ -1413,12 +1881,21 @@
 
     <script>
 
+        /* =========================
+           FAQ
+        ========================= */
+
         function toggleFaq(button) {
 
-            const item = button.parentElement;
-            const answer = item.querySelector(".faq-answer");
+            const item =
+                button.parentElement;
 
-            const allItems = document.querySelectorAll(".faq-item");
+            const answer =
+                item.querySelector(".faq-answer");
+
+            const allItems =
+                document.querySelectorAll(".faq-item");
+
 
             allItems.forEach(function(otherItem) {
 
@@ -1453,50 +1930,63 @@
         }
 
 
-        function enviarFormulario(event) {
+        /* =========================
+           SERVIÇOS SELECIONADOS
+        ========================= */
 
-            event.preventDefault();
+        function atualizarServicosSelecionados() {
 
-            const nome =
-                document.getElementById("nome").value;
-
-            const site =
-                document.getElementById("site").value;
-
-            const problema =
-                document.getElementById("problema").value;
-
-
-            const mensagem =
-                "Olá, SysHeal!%0A%0A" +
-                "Nome: " + encodeURIComponent(nome) +
-                "%0A" +
-                "Site: " + encodeURIComponent(site) +
-                "%0A%0A" +
-                "Problema:%0A" +
-                encodeURIComponent(problema);
+            const selecionados =
+                Array.from(
+                    document.querySelectorAll(
+                        'input[name="servicos"]:checked'
+                    )
+                );
 
 
-            /*
-                TROQUE O NÚMERO ABAIXO PELO WHATSAPP
-                DA SYSHEAL.
-
-                Exemplo:
-                5535999999999
-            */
-
-            const numeroWhatsApp = "5535999999999";
+            const container =
+                document.getElementById(
+                    "servicos-selecionados"
+                );
 
 
-            window.open(
-                "https://wa.me/" +
-                numeroWhatsApp +
-                "?text=" +
-                mensagem,
-                "_blank"
-            );
+            if (selecionados.length === 0) {
+
+                container.innerHTML =
+                    "<span>Nenhum serviço selecionado</span>";
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                selecionados.map(function(servico) {
+
+                    return (
+                        "<span>✓ " +
+                        servico.value +
+                        "</span>"
+                    );
+
+                }).join("");
 
         }
+
+
+        document
+            .querySelectorAll('input[name="servicos"]')
+            .forEach(function(servico) {
+
+                servico.addEventListener(
+                    "change",
+                    atualizarServicosSelecionados
+                );
+
+            });
+
+
+        atualizarServicosSelecionados();
 
     </script>
 
