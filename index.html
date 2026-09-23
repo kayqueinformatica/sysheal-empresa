@@ -1,1 +1,1810 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SysHeal — Código saudável. Sistemas fortes.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 76px;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.94);
+            border-bottom: 1px solid #202020;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            width: 90%;
+            max-width: 1250px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-lockup img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .brand-sys {
+            color: #fff;
+        }
+
+        .brand-heal {
+            color: #e50914;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #bbb;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .nav-button {
+            background: #e50914;
+            color: #fff !important;
+            padding: 11px 18px;
+            border-radius: 6px;
+        }
+
+        .nav-button:hover {
+            background: #ff1a25;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 7% 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: #050505;
+            color: #fff;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: #e50914;
+            opacity: 0.06;
+            border-radius: 50%;
+            filter: blur(100px);
+            top: -200px;
+            right: -150px;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            color: #e50914;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 80px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            max-width: 800px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #e50914;
+        }
+
+        .hero p {
+            color: #aaa;
+            max-width: 620px;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0 24px;
+            border-radius: 6px;
+            font-weight: 800;
+            border: 1px solid transparent;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #e50914;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #ff1a25;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border-color: #333;
+            color: #fff;
+            background: #0c0c0c;
+        }
+
+        .btn-secondary:hover {
+            border-color: #666;
+            transform: translateY(-2px);
+        }
+
+        .hero-logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-box {
+            width: min(430px, 80vw);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #222;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #101010, #080808);
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-logo-box img {
+            width: 72%;
+            height: 72%;
+            object-fit: contain;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-container {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: #e50914;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: #666;
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        /* =========================
+           PROCESSO
+        ========================= */
+
+        .process {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .process .section-title {
+            color: #111;
+        }
+
+        .process .section-description {
+            color: #666;
+        }
+
+        .process-grid {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .process-item {
+            padding: 30px;
+            border-top: 1px solid #ddd;
+            position: relative;
+        }
+
+        .process-item:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            color: #e50914;
+            font-size: 25px;
+            z-index: 2;
+        }
+
+        .process-item span {
+            color: #e50914;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .process-item h3 {
+            margin: 14px 0 10px;
+            font-size: 21px;
+        }
+
+        .process-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
+
+        .services {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .services-header {
+            margin-bottom: 55px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 32px 25px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.04);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #e50914;
+            box-shadow: 0 14px 35px rgba(0,0,0,.08);
+        }
+
+        .service-number {
+            color: #e50914;
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           EMPRESA
+        ========================= */
+
+        .about {
+            background: #050505;
+            color: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 430px;
+            border: 1px solid #292929;
+            background: #000;
+            border-radius: 18px;
+        }
+
+        .about-logo img {
+            width: 65%;
+            max-width: 300px;
+            object-fit: contain;
+        }
+
+        .about-content h2 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .about-content h2 span {
+            color: #e50914;
+        }
+
+        .about-content p {
+            color: #aaa;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .about-list {
+            margin-top: 30px;
+            display: grid;
+            gap: 13px;
+        }
+
+        .about-list div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ddd;
+        }
+
+        .about-list strong {
+            color: #e50914;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .faq .section-title {
+            color: #111;
+        }
+
+        .faq .section-description {
+            color: #666;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #111;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .faq-icon {
+            color: #e50914;
+            font-size: 23px;
+            transition: 0.25s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            color: #666;
+            padding: 0 0 24px;
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* =========================
+           DIAGNÓSTICO
+        ========================= */
+
+        .diagnosis {
+            background: #050505;
+            color: #fff;
+        }
+
+        .diagnosis .section-title {
+            color: #fff;
+        }
+
+        .diagnosis .section-description {
+            color: #aaa;
+        }
+
+        .diagnosis-box {
+            margin-top: 50px;
+            border: 1px solid #292929;
+            background: #0d0d0d;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .diagnosis-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ddd;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 7px;
+            color: #fff;
+            padding: 14px 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #e50914;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #777;
+        }
+
+        /* =========================
+           SELEÇÃO DE SERVIÇOS
+        ========================= */
+
+        .service-selection {
+            margin-bottom: 5px;
+        }
+
+        .service-selection-title {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #ddd;
+        }
+
+        .service-selection-note {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .service-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid #333;
+            border-radius: 7px;
+            background: #111;
+            color: #ddd;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .service-option:hover {
+            border-color: #e50914;
+        }
+
+        .service-option input {
+            width: auto;
+            accent-color: #e50914;
+            cursor: pointer;
+        }
+
+        .selected-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .selected-services span {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #ddd;
+            background: #111;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 120px 7%;
+            text-align: center;
+            background: #e50914;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 17px;
+        }
+
+        .cta .btn-primary {
+            background: #050505;
+        }
+
+        .cta .btn-primary:hover {
+            background: #111;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #222;
+            padding: 45px 7%;
+        }
+
+        .footer-container {
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            color: #e50914;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-logo-area {
+                order: -1;
+            }
+
+            .hero {
+                padding-top: 125px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .process-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-logo {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                height: 68px;
+            }
+
+            .header-container {
+                width: 92%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .brand-lockup img {
+                width: 37px;
+                height: 37px;
+            }
+
+            .brand-name {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 110px 6% 70px;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+                letter-spacing: -2.5px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diagnosis-box {
+                padding: 22px;
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+
+            .about-logo {
+                min-height: 280px;
+            }
+
+            .cta {
+                padding: 90px 6%;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="#inicio" class="brand-lockup">
+
+                <img
+                    src="imagens/logo-sysheal-crop1.png"
+                    alt="Logo SysHeal"
+                >
+
+                <span class="brand-name">
+                    <span class="brand-sys">SYS</span><span class="brand-heal">HEAL</span>
+                </span>
+
+            </a>
+
+            <nav>
+
+                <a href="#servicos">Serviços</a>
+
+                <a href="#processo">Processo</a>
+
+                <a href="#empresa">Empresa</a>
+
+                <a href="#faq">FAQ</a>
+
+                <a href="#diagnostico" class="nav-button">
+                    Diagnóstico
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
+
+    <main>
+
+        <!-- =========================
+             01 — HERO
+        ========================== -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-tag">
+                        Análise • Correção • Testes • Segurança
+                    </div>
+
+                    <h1>
+                        Seu site tem um problema.
+                        <span>A gente encontra.</span>
+                    </h1>
+
+                    <p>
+                        Analisamos seu site para encontrar erros, falhas,
+                        problemas de desempenho e possíveis vulnerabilidades.
+                        Depois, mostramos o que precisa ser feito para melhorar
+                        o sistema.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#diagnostico" class="btn btn-primary">
+                            Solicitar diagnóstico
+                        </a>
+
+                        <a href="#servicos" class="btn btn-secondary">
+                            Ver serviços
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-logo-area">
+
+                    <div class="hero-logo-box">
+
+                        <img
+                            src="imagens/logo-sysheal.png"
+                            alt="Logo SysHeal"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             02 — PROCESSO
+        ========================== -->
+
+        <section class="process" id="processo">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    Como trabalhamos
+                </div>
+
+                <h2 class="section-title">
+                    Simples. Direto. Técnico.
+                </h2>
+
+                <p class="section-description">
+                    O trabalho segue etapas claras para entender o problema
+                    antes de realizar qualquer alteração.
+                </p>
+
+
+                <div class="process-grid">
+
+                    <div class="process-item">
+
+                        <span>ETAPA 01</span>
+
+                        <h3>
+                            Entender
+                        </h3>
+
+                        <p>
+                            Entendemos o site e o problema apresentado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 02</span>
+
+                        <h3>
+                            Analisar
+                        </h3>
+
+                        <p>
+                            Investigamos o código e os pontos relacionados
+                            ao problema.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 03</span>
+
+                        <h3>
+                            Propor
+                        </h3>
+
+                        <p>
+                            Apresentamos o que precisa ser feito e o
+                            orçamento conforme a dificuldade do trabalho.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 04</span>
+
+                        <h3>
+                            Resolver
+                        </h3>
+
+                        <p>
+                            Com a aprovação, realizamos o trabalho
+                            necessário e fazemos os testes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             03 — SERVIÇOS
+        ========================== -->
+
+        <section class="services" id="servicos">
+
+            <div class="section-container">
+
+                <div class="services-header">
+
+                    <div class="section-label">
+                        O que fazemos
+                    </div>
+
+                    <h2 class="section-title">
+                        Seu site sob análise.
+                    </h2>
+
+                    <p class="section-description">
+                        Trabalhamos para identificar problemas que podem
+                        comprometer o funcionamento, a estabilidade,
+                        o desempenho e a segurança do seu site.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Testar segurança
+                        </h3>
+
+                        <p>
+                            Procuramos possíveis vulnerabilidades e pontos
+                            que podem representar riscos para o site.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Procurar erros
+                        </h3>
+
+                        <p>
+                            Investigamos bugs, falhas e comportamentos
+                            inesperados que prejudicam o funcionamento.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Corrigir problemas
+                        </h3>
+
+                        <p>
+                            Após identificar o problema, trabalhamos na
+                            correção e melhoria do código.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Melhorar desempenho
+                        </h3>
+
+                        <p>
+                            Analisamos pontos que podem deixar o site
+                            mais lento, instável ou ineficiente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             04 — EMPRESA
+        ========================== -->
+
+        <section class="about" id="empresa">
+
+            <div class="section-container">
+
+                <div class="about-grid">
+
+                    <div class="about-logo">
+
+                        <img
+                            src="imagens/logo-sysheal.png"
+                            alt="SYSHEAL — Código saudável. Sistemas fortes."
+                        >
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <div class="section-label">
+                            Sobre a SysHeal
+                        </div>
+
+                        <h2>
+                            Código saudável.
+                            <span>Sistemas fortes.</span>
+                        </h2>
+
+                        <p>
+                            A SysHeal trabalha com análise e melhoria
+                            de sites existentes, buscando encontrar
+                            problemas antes que eles causem maiores
+                            impactos.
+                        </p>
+
+                        <p>
+                            Nossa abordagem começa pela análise.
+                            Primeiro entendemos o problema, depois
+                            definimos a melhor forma de resolvê-lo.
+                        </p>
+
+
+                        <div class="about-list">
+
+                            <div>
+                                <strong>✓</strong>
+                                Análise técnica
+                            </div>
+
+                            <div>
+                                <strong>✓</strong>
+                                Identificação de erros
+                            </div>
+
+                            <div>
+                                <strong>✓</strong>
+                                Testes
+                            </div>
+
+                            <div>
+                                <strong>✓</strong>
+                                Melhorias de desempenho
+                            </div>
+
+                            <div>
+                                <strong>✓</strong>
+                                Análise de segurança
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             05 — FAQ
+        ========================== -->
+
+        <section class="faq" id="faq">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    Dúvidas
+                </div>
+
+                <h2 class="section-title">
+                    Perguntas frequentes.
+                </h2>
+
+
+                <div class="faq-list">
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            onclick="toggleFaq(this)"
+                        >
+
+                            <span>
+                                A SysHeal cria sites do zero?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                O foco atual da SysHeal é trabalhar em
+                                sites existentes, analisando, corrigindo,
+                                testando e melhorando seus sistemas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            onclick="toggleFaq(this)"
+                        >
+
+                            <span>
+                                Quanto custa o serviço?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                O orçamento depende da dificuldade,
+                                complexidade e quantidade de trabalho
+                                necessária para resolver o problema.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            onclick="toggleFaq(this)"
+                        >
+
+                            <span>
+                                Vocês garantem 100% de segurança?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Nenhum sistema pode ter sua segurança
+                                garantida em 100%. O objetivo da análise
+                                é identificar possíveis vulnerabilidades
+                                e reduzir os riscos encontrados.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            onclick="toggleFaq(this)"
+                        >
+
+                            <span>
+                                O que acontece depois da análise?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Apresentamos os problemas encontrados,
+                                explicamos o que precisa ser feito e
+                                montamos o orçamento de acordo com
+                                a dificuldade do trabalho.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             06 — DIAGNÓSTICO
+        ========================== -->
+
+        <section class="diagnosis" id="diagnostico">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    Primeiro passo
+                </div>
+
+                <h2 class="section-title">
+                    Vamos descobrir o problema.
+                </h2>
+
+                <p class="section-description">
+                    Conte um pouco sobre o seu site, selecione o que você
+                    precisa e explique o problema que está enfrentando.
+                </p>
+
+
+                <div class="diagnosis-box">
+
+                    <form
+                        id="diagnosisForm"
+                        class="diagnosis-form"
+                        action="https://formsubmit.co/kayqueinformatica88@gmail.com"
+                        method="POST"
+                    >
+
+                        <!-- FORMSUBMIT -->
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Nova solicitação de diagnóstico - SysHeal"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_captcha"
+                            value="false"
+                        >
+
+
+                        <!-- NOME -->
+
+                        <div class="form-group">
+
+                            <label for="nome">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Seu nome"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SITE -->
+
+                        <div class="form-group">
+
+                            <label for="site">
+                                Site
+                            </label>
+
+                            <input
+                                type="url"
+                                id="site"
+                                name="site"
+                                placeholder="https://seusite.com.br"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SERVIÇOS -->
+
+                        <div class="service-selection">
+
+                            <div class="service-selection-title">
+                                O que você precisa?
+                            </div>
+
+                            <div class="service-selection-note">
+                                Selecione uma ou mais opções:
+                            </div>
+
+
+                            <div class="service-options">
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Análise de código"
+                                    >
+
+                                    <span>
+                                        Análise de código
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Correção de erros"
+                                    >
+
+                                    <span>
+                                        Correção de erros
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Testes"
+                                    >
+
+                                    <span>
+                                        Testes
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Segurança"
+                                    >
+
+                                    <span>
+                                        Segurança
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Desempenho"
+                                    >
+
+                                    <span>
+                                        Desempenho
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Estabilidade"
+                                    >
+
+                                    <span>
+                                        Estabilidade
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SERVIÇOS SELECIONADOS -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Serviços selecionados
+                            </label>
+
+                            <div
+                                id="servicos-selecionados"
+                                class="selected-services"
+                            >
+
+                                <span>
+                                    Nenhum serviço selecionado
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROBLEMA -->
+
+                        <div class="form-group">
+
+                            <label for="problema">
+                                Qual é o problema?
+                            </label>
+
+                            <textarea
+                                id="problema"
+                                name="problema"
+                                placeholder="Explique brevemente o que está acontecendo..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Solicitar diagnóstico
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             07 — CTA
+        ========================== -->
+
+        <section class="cta">
+
+            <div class="section-container">
+
+                <h2>
+                    Seu site está saudável?
+                </h2>
+
+                <p>
+                    Descubra problemas antes que eles se tornem
+                    problemas maiores.
+                </p>
+
+                <a
+                    href="#diagnostico"
+                    class="btn btn-primary"
+                >
+                    Solicitar diagnóstico
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                SYS<span>HEAL</span>
+            </div>
+
+            <div class="footer-text">
+                CÓDIGO SAUDÁVEL. SISTEMAS FORTES.
+            </div>
+
+            <div class="footer-text">
+                © 2026 SysHeal. Todos os direitos reservados.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        function toggleFaq(button) {
+
+            const item = button.parentElement;
+
+            const answer =
+                item.querySelector(".faq-answer");
+
+            const allItems =
+                document.querySelectorAll(".faq-item");
+
+
+            allItems.forEach(function(otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
+
+                    const otherAnswer =
+                        otherItem.querySelector(".faq-answer");
+
+                    otherAnswer.style.maxHeight = null;
+
+                }
+
+            });
+
+
+            item.classList.toggle("active");
+
+
+            if (item.classList.contains("active")) {
+
+                answer.style.maxHeight =
+                    answer.scrollHeight + "px";
+
+            } else {
+
+                answer.style.maxHeight = null;
+
+            }
+
+        }
+
+
+        /* =========================
+           SERVIÇOS SELECIONADOS
+        ========================= */
+
+        function atualizarServicosSelecionados() {
+
+            const selecionados =
+                Array.from(
+                    document.querySelectorAll(
+                        'input[name="servicos"]:checked'
+                    )
+                );
+
+
+            const container =
+                document.getElementById(
+                    "servicos-selecionados"
+                );
+
+
+            if (selecionados.length === 0) {
+
+                container.innerHTML =
+                    "<span>Nenhum serviço selecionado</span>";
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                selecionados.map(function(servico) {
+
+                    return (
+                        "<span>✓ " +
+                        servico.value +
+                        "</span>"
+                    );
+
+                }).join("");
+
+        }
+
+
+        document
+            .querySelectorAll('input[name="servicos"]')
+            .forEach(function(servico) {
+
+                servico.addEventListener(
+                    "change",
+                    atualizarServicosSelecionados
+                );
+
+            });
+
+
+        atualizarServicosSelecionados();
+
+    </script>
+
+</body>
+</html>
+```
 
