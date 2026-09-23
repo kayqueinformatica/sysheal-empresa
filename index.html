@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,8 +20,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: #fff;
+            background: #ffffff;
+            color: #111111;
             line-height: 1.6;
         }
 
@@ -126,6 +127,8 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            background: #050505;
+            color: #fff;
         }
 
         .hero::before {
@@ -246,7 +249,7 @@
         }
 
         /* =========================
-           SECTION
+           SEÇÕES
         ========================= */
 
         section {
@@ -276,180 +279,26 @@
         }
 
         .section-description {
-            color: #999;
+            color: #666;
             max-width: 650px;
             font-size: 17px;
         }
 
         /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            background: #090909;
-        }
-
-        .services-header {
-            margin-bottom: 55px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .service-card {
-            padding: 32px 25px;
-            border: 1px solid #222;
-            background: #0d0d0d;
-            border-radius: 12px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: #e50914;
-        }
-
-        .service-number {
-            color: #e50914;
-            font-size: 13px;
-            font-weight: 900;
-            margin-bottom: 30px;
-        }
-
-        .service-card h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* =========================
-           SELEÇÃO DE SERVIÇOS
-        ========================= */
-
-        .service-selection {
-            margin-top: 40px;
-        }
-
-        .service-selection-title {
-            font-size: 14px;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .service-selection-note {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 14px;
-        }
-
-        .service-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .service-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 16px;
-            border: 1px solid #e0e0e0;
-            border-radius: 7px;
-            background: #fff;
-            color: #111;
-            cursor: pointer;
-        }
-
-        .service-option input {
-            width: auto;
-            accent-color: #e50914;
-            cursor: pointer;
-        }
-
-        /* =========================
-           DIAGNOSIS
-        ========================= */
-
-        .diagnosis {
-            background: #050505;
-        }
-
-        .diagnosis-box {
-            margin-top: 50px;
-            border: 1px solid #242424;
-            background: #0b0b0b;
-            border-radius: 15px;
-            padding: 35px;
-        }
-
-        .diagnosis-form {
-            display: grid;
-            gap: 18px;
-        }
-
-        .form-group {
-            display: grid;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 13px;
-            font-weight: 700;
-            color: #ddd;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: #050505;
-            border: 1px solid #292929;
-            border-radius: 7px;
-            color: #fff;
-            padding: 14px 15px;
-            outline: none;
-            transition: 0.2s;
-        }
-
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #e50914;
-        }
-
-        .selected-services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .selected-services span {
-            display: inline-block;
-            padding: 8px 12px;
-            border: 1px solid #333;
-            border-radius: 6px;
-            color: #ddd;
-            background: #111;
-            font-size: 13px;
-        }
-
-        /* =========================
-           PROCESS
+           PROCESSO
         ========================= */
 
         .process {
-            background: #090909;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .process .section-title {
+            color: #111;
+        }
+
+        .process .section-description {
+            color: #666;
         }
 
         .process-grid {
@@ -461,7 +310,7 @@
 
         .process-item {
             padding: 30px;
-            border-top: 1px solid #333;
+            border-top: 1px solid #ddd;
             position: relative;
         }
 
@@ -487,16 +336,68 @@
         }
 
         .process-item p {
-            color: #888;
+            color: #666;
             font-size: 14px;
         }
 
         /* =========================
-           ABOUT
+           SERVIÇOS
+        ========================= */
+
+        .services {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .services-header {
+            margin-bottom: 55px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 32px 25px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.04);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #e50914;
+            box-shadow: 0 14px 35px rgba(0,0,0,.08);
+        }
+
+        .service-number {
+            color: #e50914;
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           EMPRESA
         ========================= */
 
         .about {
             background: #050505;
+            color: #fff;
         }
 
         .about-grid {
@@ -511,8 +412,8 @@
             justify-content: center;
             align-items: center;
             min-height: 430px;
-            border: 1px solid #222;
-            background: #090909;
+            border: 1px solid #292929;
+            background: #000;
             border-radius: 18px;
         }
 
@@ -527,6 +428,7 @@
             line-height: 1;
             letter-spacing: -3px;
             margin-bottom: 25px;
+            color: #fff;
         }
 
         .about-content h2 span {
@@ -534,7 +436,7 @@
         }
 
         .about-content p {
-            color: #999;
+            color: #aaa;
             margin-bottom: 18px;
             font-size: 16px;
         }
@@ -561,7 +463,16 @@
         ========================= */
 
         .faq {
-            background: #090909;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .faq .section-title {
+            color: #111;
+        }
+
+        .faq .section-description {
+            color: #666;
         }
 
         .faq-list {
@@ -570,14 +481,14 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid #292929;
+            border-bottom: 1px solid #ddd;
         }
 
         .faq-question {
             width: 100%;
             border: 0;
             background: transparent;
-            color: #fff;
+            color: #111;
             padding: 24px 0;
             display: flex;
             align-items: center;
@@ -601,13 +512,147 @@
         }
 
         .faq-answer p {
-            color: #888;
+            color: #666;
             padding: 0 0 24px;
             font-size: 15px;
         }
 
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
+        }
+
+        /* =========================
+           DIAGNÓSTICO
+        ========================= */
+
+        .diagnosis {
+            background: #050505;
+            color: #fff;
+        }
+
+        .diagnosis .section-title {
+            color: #fff;
+        }
+
+        .diagnosis .section-description {
+            color: #aaa;
+        }
+
+        .diagnosis-box {
+            margin-top: 50px;
+            border: 1px solid #292929;
+            background: #0d0d0d;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .diagnosis-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ddd;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 7px;
+            color: #fff;
+            padding: 14px 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #e50914;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #777;
+        }
+
+        /* =========================
+           SELEÇÃO DE SERVIÇOS
+        ========================= */
+
+        .service-selection {
+            margin-bottom: 5px;
+        }
+
+        .service-selection-title {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #ddd;
+        }
+
+        .service-selection-note {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .service-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1px solid #333;
+            border-radius: 7px;
+            background: #111;
+            color: #ddd;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .service-option:hover {
+            border-color: #e50914;
+        }
+
+        .service-option input {
+            width: auto;
+            accent-color: #e50914;
+            cursor: pointer;
+        }
+
+        .selected-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .selected-services span {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #ddd;
+            background: #111;
+            font-size: 13px;
         }
 
         /* =========================
@@ -618,6 +663,7 @@
             padding: 120px 7%;
             text-align: center;
             background: #e50914;
+            color: #fff;
         }
 
         .cta h2 {
@@ -648,7 +694,7 @@
 
         footer {
             background: #050505;
-            border-top: 1px solid #202020;
+            border-top: 1px solid #222;
             padding: 45px 7%;
         }
 
@@ -665,6 +711,7 @@
         .footer-brand {
             font-size: 20px;
             font-weight: 900;
+            color: #fff;
         }
 
         .footer-brand span {
@@ -674,195 +721,6 @@
         .footer-text {
             color: #666;
             font-size: 13px;
-        }
-
-        /* =========================
-           ESTÉTICA
-        ========================= */
-
-        body {
-            background: #ffffff;
-            color: #111111;
-        }
-
-        header {
-            background: rgba(5, 5, 5, 0.94);
-            border-bottom-color: #202020;
-        }
-
-        .brand-sys {
-            color: #fff;
-        }
-
-        nav a {
-            color: #bbb;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        .hero {
-            background: #050505;
-            color: #fff;
-        }
-
-        .hero p {
-            color: #aaa;
-        }
-
-        .btn-secondary {
-            border-color: #333;
-            color: #fff;
-            background: #0c0c0c;
-        }
-
-        .btn-secondary:hover {
-            border-color: #666;
-            background: #0c0c0c;
-        }
-
-        .hero-logo-box {
-            border-color: #222;
-            background: linear-gradient(145deg, #101010, #080808);
-            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
-        }
-
-        .services {
-            background: #ffffff;
-            color: #111111;
-        }
-
-        .section-description {
-            color: #666;
-        }
-
-        .service-card {
-            border-color: #e0e0e0;
-            background: #fff;
-            box-shadow: 0 8px 30px rgba(0,0,0,.04);
-        }
-
-        .service-card:hover {
-            border-color: #e50914;
-            box-shadow: 0 14px 35px rgba(0,0,0,.08);
-        }
-
-        .service-card p {
-            color: #666;
-        }
-
-        .diagnosis {
-            background: #050505;
-            color: #fff;
-        }
-
-        .diagnosis .section-title {
-            color: #fff;
-        }
-
-        .diagnosis .section-description {
-            color: #aaa;
-        }
-
-        .diagnosis-box {
-            border-color: #292929;
-            background: #0d0d0d;
-            box-shadow: none;
-        }
-
-        .form-group label {
-            color: #ddd;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            background: #111;
-            border-color: #333;
-            color: #fff;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #777;
-        }
-
-        .process {
-            background: #ffffff;
-            color: #111111;
-        }
-
-        .process .section-title {
-            color: #111;
-        }
-
-        .process .section-description {
-            color: #666;
-        }
-
-        .process-item {
-            border-top-color: #ddd;
-        }
-
-        .process-item p {
-            color: #666;
-        }
-
-        .about {
-            background: #050505;
-            color: #fff;
-        }
-
-        .about .section-label {
-            color: #e50914;
-        }
-
-        .about-content h2 {
-            color: #fff;
-        }
-
-        .about-content p {
-            color: #aaa;
-        }
-
-        .about-list div {
-            color: #ddd;
-        }
-
-        .about-logo {
-            border-color: #292929;
-            background: #000;
-            box-shadow: none;
-        }
-
-        .faq {
-            background: #ffffff;
-            color: #111111;
-        }
-
-        .faq .section-title {
-            color: #111;
-        }
-
-        .faq .section-description {
-            color: #666;
-        }
-
-        .faq-item {
-            border-bottom-color: #ddd;
-        }
-
-        .faq-question {
-            color: #111;
-        }
-
-        .faq-answer p {
-            color: #666;
-        }
-
-        footer {
-            background: #050505;
-            border-top-color: #222;
         }
 
         /* =========================
@@ -1007,26 +865,15 @@
 
             <nav>
 
-                <a href="#servicos">
-                    Serviços
-                </a>
+                <a href="#servicos">Serviços</a>
 
-                <a href="#processo">
-                    Processo
-                </a>
+                <a href="#processo">Processo</a>
 
-                <a href="#empresa">
-                    Empresa
-                </a>
+                <a href="#empresa">Empresa</a>
 
-                <a href="#faq">
-                    FAQ
-                </a>
+                <a href="#faq">FAQ</a>
 
-                <a
-                    href="#diagnostico"
-                    class="nav-button"
-                >
+                <a href="#diagnostico" class="nav-button">
                     Diagnóstico
                 </a>
 
@@ -1038,15 +885,16 @@
 
 
     <!-- =========================
-         HERO
+         CONTEÚDO
     ========================== -->
 
     <main>
 
-        <section
-            class="hero"
-            id="inicio"
-        >
+        <!-- =========================
+             01 — HERO
+        ========================== -->
+
+        <section class="hero" id="inicio">
 
             <div class="hero-container">
 
@@ -1070,17 +918,11 @@
 
                     <div class="hero-buttons">
 
-                        <a
-                            href="#diagnostico"
-                            class="btn btn-primary"
-                        >
+                        <a href="#diagnostico" class="btn btn-primary">
                             Solicitar diagnóstico
                         </a>
 
-                        <a
-                            href="#servicos"
-                            class="btn btn-secondary"
-                        >
+                        <a href="#servicos" class="btn btn-secondary">
                             Ver serviços
                         </a>
 
@@ -1108,13 +950,103 @@
 
 
         <!-- =========================
-             SERVIÇOS
+             02 — PROCESSO
         ========================== -->
 
-        <section
-            class="services"
-            id="servicos"
-        >
+        <section class="process" id="processo">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    Como trabalhamos
+                </div>
+
+                <h2 class="section-title">
+                    Simples. Direto. Técnico.
+                </h2>
+
+                <p class="section-description">
+                    O trabalho segue etapas claras para entender o problema
+                    antes de realizar qualquer alteração.
+                </p>
+
+
+                <div class="process-grid">
+
+                    <div class="process-item">
+
+                        <span>ETAPA 01</span>
+
+                        <h3>
+                            Entender
+                        </h3>
+
+                        <p>
+                            Entendemos o site e o problema apresentado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 02</span>
+
+                        <h3>
+                            Analisar
+                        </h3>
+
+                        <p>
+                            Investigamos o código e os pontos relacionados
+                            ao problema.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 03</span>
+
+                        <h3>
+                            Propor
+                        </h3>
+
+                        <p>
+                            Apresentamos o que precisa ser feito e o
+                            orçamento conforme a dificuldade do trabalho.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span>ETAPA 04</span>
+
+                        <h3>
+                            Resolver
+                        </h3>
+
+                        <p>
+                            Com a aprovação, realizamos o trabalho
+                            necessário e fazemos os testes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             03 — SERVIÇOS
+        ========================== -->
+
+        <section class="services" id="servicos">
 
             <div class="section-container">
 
@@ -1212,387 +1144,20 @@
 
                 </div>
 
-
-                <!--
-                    Os checkboxes ficam visualmente nesta seção,
-                    mas pertencem ao formulário através do atributo
-                    form="diagnosisForm".
-                -->
-
-                <div class="service-selection">
-
-                    <div class="service-selection-title">
-                        O que você precisa?
-                    </div>
-
-                    <div class="service-selection-note">
-                        Selecione uma ou mais opções:
-                    </div>
-
-                    <div class="service-options">
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Análise de código"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Análise de código
-                            </span>
-
-                        </label>
-
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Correção de erros"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Correção de erros
-                            </span>
-
-                        </label>
-
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Testes"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Testes
-                            </span>
-
-                        </label>
-
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Segurança"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Segurança
-                            </span>
-
-                        </label>
-
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Desempenho"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Desempenho
-                            </span>
-
-                        </label>
-
-
-                        <label class="service-option">
-
-                            <input
-                                type="checkbox"
-                                name="servicos"
-                                value="Estabilidade"
-                                form="diagnosisForm"
-                            >
-
-                            <span>
-                                Estabilidade
-                            </span>
-
-                        </label>
-
-                    </div>
-
-                </div>
-
             </div>
 
         </section>
 
 
         <!-- =========================
-             DIAGNÓSTICO
+             04 — EMPRESA
         ========================== -->
 
-        <section
-            class="diagnosis"
-            id="diagnostico"
-        >
-
-            <div class="section-container">
-
-                <div class="section-label">
-                    Primeiro passo
-                </div>
-
-                <h2 class="section-title">
-                    Vamos descobrir o problema.
-                </h2>
-
-                <p class="section-description">
-                    Conte um pouco sobre o seu site e sobre o problema
-                    que você está enfrentando.
-                </p>
-
-
-                <div class="diagnosis-box">
-
-                    <form
-                        id="diagnosisForm"
-                        class="diagnosis-form"
-                        action="https://formsubmit.co/kayqueinformatica88@gmail.com"
-                        method="POST"
-                    >
-
-                        <!-- CONFIGURAÇÕES DO FORMSUBMIT -->
-
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="Nova solicitação de diagnóstico - SysHeal"
-                        >
-
-                        <input
-                            type="hidden"
-                            name="_template"
-                            value="table"
-                        >
-
-                        <input
-                            type="hidden"
-                            name="_captcha"
-                            value="false"
-                        >
-
-
-                        <div class="form-group">
-
-                            <label for="nome">
-                                Nome
-                            </label>
-
-                            <input
-                                type="text"
-                                id="nome"
-                                name="nome"
-                                placeholder="Seu nome"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="site">
-                                Site
-                            </label>
-
-                            <input
-                                type="url"
-                                id="site"
-                                name="site"
-                                placeholder="https://seusite.com.br"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label>
-                                Serviços selecionados
-                            </label>
-
-                            <div
-                                id="servicos-selecionados"
-                                class="selected-services"
-                            >
-
-                                <span>
-                                    Nenhum serviço selecionado
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="problema">
-                                Qual é o problema?
-                            </label>
-
-                            <textarea
-                                id="problema"
-                                name="problema"
-                                placeholder="Explique brevemente o que está acontecendo..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary"
-                        >
-                            Solicitar diagnóstico
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROCESSO
-        ========================== -->
-
-        <section
-            class="process"
-            id="processo"
-        >
-
-            <div class="section-container">
-
-                <div class="section-label">
-                    Como trabalhamos
-                </div>
-
-                <h2 class="section-title">
-                    Simples. Direto. Técnico.
-                </h2>
-
-                <p class="section-description">
-                    O trabalho segue etapas claras para entender o problema
-                    antes de realizar qualquer alteração.
-                </p>
-
-
-                <div class="process-grid">
-
-                    <div class="process-item">
-
-                        <span>
-                            ETAPA 01
-                        </span>
-
-                        <h3>
-                            Entender
-                        </h3>
-
-                        <p>
-                            Entendemos o site e o problema apresentado.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span>
-                            ETAPA 02
-                        </span>
-
-                        <h3>
-                            Analisar
-                        </h3>
-
-                        <p>
-                            Investigamos o código e os pontos relacionados
-                            ao problema.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span>
-                            ETAPA 03
-                        </span>
-
-                        <h3>
-                            Propor
-                        </h3>
-
-                        <p>
-                            Apresentamos o que precisa ser feito e o
-                            orçamento conforme a dificuldade do trabalho.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span>
-                            ETAPA 04
-                        </span>
-
-                        <h3>
-                            Resolver
-                        </h3>
-
-                        <p>
-                            Com a aprovação, realizamos o trabalho
-                            necessário e fazemos os testes.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EMPRESA
-        ========================== -->
-
-        <section
-            class="about"
-            id="empresa"
-        >
+        <section class="about" id="empresa">
 
             <div class="section-container">
 
                 <div class="about-grid">
-
 
                     <div class="about-logo">
 
@@ -1668,13 +1233,10 @@
 
 
         <!-- =========================
-             FAQ
+             05 — FAQ
         ========================== -->
 
-        <section
-            class="faq"
-            id="faq"
-        >
+        <section class="faq" id="faq">
 
             <div class="section-container">
 
@@ -1688,7 +1250,6 @@
 
 
                 <div class="faq-list">
-
 
                     <div class="faq-item">
 
@@ -1811,6 +1372,260 @@
 
                     </div>
 
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             06 — DIAGNÓSTICO
+        ========================== -->
+
+        <section class="diagnosis" id="diagnostico">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    Primeiro passo
+                </div>
+
+                <h2 class="section-title">
+                    Vamos descobrir o problema.
+                </h2>
+
+                <p class="section-description">
+                    Conte um pouco sobre o seu site, selecione o que você
+                    precisa e explique o problema que está enfrentando.
+                </p>
+
+
+                <div class="diagnosis-box">
+
+                    <form
+                        id="diagnosisForm"
+                        class="diagnosis-form"
+                        action="https://formsubmit.co/kayqueinformatica88@gmail.com"
+                        method="POST"
+                    >
+
+                        <!-- FORMSUBMIT -->
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Nova solicitação de diagnóstico - SysHeal"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_captcha"
+                            value="false"
+                        >
+
+
+                        <!-- NOME -->
+
+                        <div class="form-group">
+
+                            <label for="nome">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Seu nome"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SITE -->
+
+                        <div class="form-group">
+
+                            <label for="site">
+                                Site
+                            </label>
+
+                            <input
+                                type="url"
+                                id="site"
+                                name="site"
+                                placeholder="https://seusite.com.br"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SERVIÇOS -->
+
+                        <div class="service-selection">
+
+                            <div class="service-selection-title">
+                                O que você precisa?
+                            </div>
+
+                            <div class="service-selection-note">
+                                Selecione uma ou mais opções:
+                            </div>
+
+
+                            <div class="service-options">
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Análise de código"
+                                    >
+
+                                    <span>
+                                        Análise de código
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Correção de erros"
+                                    >
+
+                                    <span>
+                                        Correção de erros
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Testes"
+                                    >
+
+                                    <span>
+                                        Testes
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Segurança"
+                                    >
+
+                                    <span>
+                                        Segurança
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Desempenho"
+                                    >
+
+                                    <span>
+                                        Desempenho
+                                    </span>
+
+                                </label>
+
+
+                                <label class="service-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="servicos"
+                                        value="Estabilidade"
+                                    >
+
+                                    <span>
+                                        Estabilidade
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SERVIÇOS SELECIONADOS -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Serviços selecionados
+                            </label>
+
+                            <div
+                                id="servicos-selecionados"
+                                class="selected-services"
+                            >
+
+                                <span>
+                                    Nenhum serviço selecionado
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROBLEMA -->
+
+                        <div class="form-group">
+
+                            <label for="problema">
+                                Qual é o problema?
+                            </label>
+
+                            <textarea
+                                id="problema"
+                                name="problema"
+                                placeholder="Explique brevemente o que está acontecendo..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Solicitar diagnóstico
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -1820,7 +1635,7 @@
 
 
         <!-- =========================
-             CTA
+             07 — CTA
         ========================== -->
 
         <section class="cta">
@@ -1887,8 +1702,7 @@
 
         function toggleFaq(button) {
 
-            const item =
-                button.parentElement;
+            const item = button.parentElement;
 
             const answer =
                 item.querySelector(".faq-answer");
@@ -1992,3 +1806,4 @@
 
 </body>
 </html>
+```
